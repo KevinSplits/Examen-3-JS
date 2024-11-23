@@ -1,0 +1,129 @@
+/* src/css/VideoGallery.css */
+html, body {
+    height: 100%; /* Aseguramos que el HTML y el body ocupen todo el alto de la ventana */
+    margin: 0; /* Eliminamos los márgenes predeterminados */
+    padding: 0; /* Eliminamos los padding predeterminados */
+    font-family: 'Gill Sans', 'Gill Sans MT', sans-serif; /* Fuente base */
+    background: #f5f5f5; /* Fondo suave para el body */
+}
+
+#root {
+    height: 100%; /* Aseguramos que el contenedor root también ocupe todo el alto de la ventana */
+}
+
+.video-gallery-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Alineamos el contenido al principio */
+    align-items: center; /* Centramos horizontalmente */
+    min-height: 100vh; /* Aseguramos que el contenedor ocupe todo el alto de la pantalla */
+    padding: 40px;
+    background: linear-gradient(135deg, #194766, #6f5979); 
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5); /* Sombra más sutil */
+    overflow: hidden;
+}
+
+
+
+.video-gallery-container h2 {
+    color: #f39c12;
+    font-size: 40px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2); /* Agrega sombra al texto */
+}
+
+.video-gallery-container h3 {
+    color: #f39c12;
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2); /* Sombra sutil en subtítulo */
+}
+
+.search-bar {
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Espacio entre el input y el botón */
+}
+
+.search-bar input[type="text"] {
+    width: 260px;
+    padding: 12px;
+    border: 1px solid #7f8c8d;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.search-bar input[type="text"]:focus {
+    border-color: #3498db; /* Color de borde al enfocar el input */
+    outline: none; /* Eliminamos el borde predeterminado de enfoque */
+}
+
+.search-bar button {
+    padding: 12px 20px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease; /* Transición suave */
+}
+
+.search-bar button:hover {
+    background-color: #2980b9; /* Efecto al pasar el ratón */
+}
+
+.video-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    width: 100%; /* Asegura que la galería ocupe el ancho completo */
+    max-height: calc(100vh - 200px); /* Ajustamos el espacio para que la galería tenga más margen */
+    padding: 20px 0;
+    overflow-y: auto; /* Permite el desplazamiento vertical si es necesario */
+}
+
+.video-item {
+    width: 320px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Sombra más sutil para los videos */
+    overflow: hidden;
+    transition: transform 0.3s ease; /* Transición suave al pasar el ratón */
+}
+
+.video-item:hover {
+    transform: scale(1.05); /* Efecto de escala al pasar el ratón */
+}
+
+.video-item video {
+    width: 100%;
+    border-bottom: 4px solid #3498db; /* Agrega un borde en la parte inferior del video */
+}
+
+.video-item p {
+    margin-top: 15px;
+    font-size: 16px;
+    color: #34495e;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .video-gallery {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .search-bar input[type="text"] {
+        width: 200px;
+    }
+
+    .video-gallery-container {
+        padding: 20px;
+    }
+}
